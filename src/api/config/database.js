@@ -20,7 +20,7 @@ export async function conectarDB() {
         await sequelize.authenticate();
         console.log("Conexion existosa");
     } catch (error) {
-        console.log("No se pudo hacer la conexion", process.env)
+        console.log("No se pudo hacer la conexion")
         process.exit(1)
     }
 }
