@@ -1,5 +1,6 @@
 let token = null
 const HOST = location.host
+const SSL = location.protocol.includes("https")
 
 /**
  * Realtime: abstrae socket.io o WebSocket nativo (ws) del navegador.
@@ -110,7 +111,8 @@ btnLogin.addEventListener("click", async () => {
     const email = inputEmail.value
     const password = inputPassword.value
 
-    fetch(`http://${HOST}/api/auth/login`, {
+    const protocol = SSL ? "wss" : "ws";
+    fetch(`${protocol}://${HOST}/api/auth/login`, {
         method: 'POST',
         headers: {
             "Content-Type": "application/json",
@@ -135,7 +137,8 @@ joinBtn.addEventListener("click", () => {
     // Cambia la URL / driver según tu backend.
     // ws:  new Realtime("ws://localhost:3000", "ws")
     // io:  new Realtime("http://localhost:3000", "socketio")
-    rt = new Realtime(`ws://${HOST}`, "socketio");
+    const protocol = SSL ? "wss" : "ws";
+    rt = new Realtime(`${protocol}://${HOST}`, "socketio");
 
     registerEvents();
 
