@@ -1,5 +1,5 @@
 import express from "express"
-import dotenv from "dotenv"
+//import dotenv from "dotenv"
 import http from "http"
 import { Server as ServerIO } from "socket.io"
 import { home } from "./api/controllers/home.controller.js"
@@ -9,7 +9,7 @@ import { database } from "./api/models/index.js"
 import controllersWS from "./ws/controllers/index.js"
 import authMiddleware from "./ws/middlewares/auth.middleware.js"
 
-dotenv.config()
+//dotenv.config()
 
 const app = express()
 const server = http.createServer(app)

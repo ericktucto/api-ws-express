@@ -11,13 +11,6 @@
   "keywords": [],
   "author": "Erick Tucto <erick@ericktucto.com>",
   "license": "MIT",
-  "devEngines": {
-    "packageManager": {
-      "name": "pnpm",
-      "version": "^11.20.0",
-      "onFail": "download"
-    }
-  },
   "type": "module",
   "dependencies": {
     "bcrypt": "^6.0.0",

@@ -1,13 +1,16 @@
 services:
-  postgres:
-    image: postgres:17
+  api:
+    build: .
     restart: unless-stopped
     environment:
-      POSTGRES_DB: tienda
-      POSTGRES_USER: erick
-      POSTGRES_PASSWORD: 1234
+      NODE_ENV: production
+      PORT: ${PORT}
+      DB_DATABASE: ${DB_DATABASE}
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+      DB_HOST: ${DB_HOST}
+      DB_PORT: ${DB_PORT}
+      JWT_SECRET: ${JWT_SECRET}
     ports:
-      - "127.0.0.1:5432:5432"
-    volumes:
-      - ./postgres_data:/var/lib/postgresql/data
+      - "127.0.0.1:3000:3000"
 
