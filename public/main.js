@@ -109,7 +109,7 @@ btnLogin.addEventListener("click", async () => {
     const email = inputEmail.value
     const password = inputPassword.value
 
-    fetch("http://localhost:3000/api/auth/login", {
+    fetch("http://192.168.122.116:3000/api/auth/login", {
         method: 'POST',
         headers: {
             "Content-Type": "application/json",
@@ -134,7 +134,7 @@ joinBtn.addEventListener("click", () => {
     // Cambia la URL / driver según tu backend.
     // ws:  new Realtime("ws://localhost:3000", "ws")
     // io:  new Realtime("http://localhost:3000", "socketio")
-    rt = new Realtime("ws://localhost:3000", "socketio");
+    rt = new Realtime("ws://192.168.122.116:3000", "socketio");
 
     registerEvents();
 
