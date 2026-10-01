@@ -111,7 +111,7 @@ btnLogin.addEventListener("click", async () => {
     const email = inputEmail.value
     const password = inputPassword.value
 
-    const protocol = SSL ? "wss" : "ws";
+    const protocol = SSL ? "https" : "http";
     fetch(`${protocol}://${HOST}/api/auth/login`, {
         method: 'POST',
         headers: {
